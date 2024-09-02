@@ -8,17 +8,32 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "movie")
+//@Entity
+//@Table(name = "movie")
 public class Movie {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "movie_id")
-    private UUID movieId;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Column(name = "movie_id")
+//    private UUID movieId;
 
-    @Basic
-    @Column(name = "title")
     private String title;
+
+    private String overview;
+
+    public Movie() {}
+
+    public Movie(String title, String overview) {
+        this.title = title;
+        this.overview = overview;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", overview='" + overview + '\'' +
+                '}';
+    }
 
 }

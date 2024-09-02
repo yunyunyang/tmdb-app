@@ -16,11 +16,11 @@ public class TmdbController {
     public TmdbController(MovieService movieService) {
     }
 
-    public void authenticate() {
-        String token = "tmdb-access-token";
+    public void authentication() {
+        String apiKey = "tmdb-api-key";
         String path = Paths.get(System.getProperty("user.dir")).getParent().toString();
         try (
-                BufferedReader br = Files.newBufferedReader(Paths.get(path + "/" + token))) {
+                BufferedReader br = Files.newBufferedReader(Paths.get(path + "/" + apiKey))) {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);

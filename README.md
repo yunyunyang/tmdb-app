@@ -1,1 +1,1 @@
-# TMDB Application
+# Movie Database App
