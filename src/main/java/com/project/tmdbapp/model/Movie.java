@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Getter
@@ -20,6 +21,12 @@ public class Movie {
     private String title;
 
     private String overview;
+
+    // Size: https://www.themoviedb.org/talk/5ee4ba52a217c0001fd0cb83
+    // https://image.tmdb.org/t/p/w92 + poster_path
+    private String poster_path;
+
+    private Date release_date;
 
     public Movie() {}
 
