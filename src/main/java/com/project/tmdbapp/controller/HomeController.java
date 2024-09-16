@@ -1,5 +1,6 @@
 package com.project.tmdbapp.controller;
 
+import com.project.tmdbapp.enums.MovieEnums;
 import com.project.tmdbapp.model.Movie;
 import com.project.tmdbapp.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,10 @@ public class HomeController {
 
     @GetMapping
     public String index(Model model) {
-        List<Movie> movies = movieService.fetchTrendingMovie();
-        model.addAttribute("movies", movies);
+        List<Movie> trendingMovie = movieService.fetchTrendingMovie();
+        List<Movie> popularMovies = movieService.fetchPopularMovie();
+        model.addAttribute("trendingMovie", trendingMovie);
+        model.addAttribute("popularMovies", popularMovies);
         return "index";
     }
 

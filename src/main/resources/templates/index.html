@@ -43,29 +43,48 @@
             <div class="col"></div>
             <div class="col-8">
 
-                <h2 class="headline-1">
-                    Track films you’ve watched.<br>
-                    Save those you want to see.<br>
-                    Tell your friends what’s good.<br>
-                </h2>
-
-                <h2 class="tagline">Letterboxd lets you…</h2>
-
-                <h2 class="section-heading">Just Reviewed…</h2>
+                <h1 class="title-hero">Welcome back, Chloe. Here’s what we’ve been watching…</h1>
+                <p class="sub-heading">This homepage will become customized as you follow active members on Letterboxd.</p>
 
             </div>
             <div class="col"></div>
         </div>
+
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-8">
+                <h2 class="section-heading">New on Letterboxd</h2>
+<!--                <h1>Welcome to Thymeleaf!</h1>-->
+<!--                <p th:text="'Hello, ' + ${name} + '!'"></p>-->
+                <div th:each="movie : ${trendingMovie}" style="float: left">
+<!--                        <h2 th:text="${movie.title}">Movie Title</h2>-->
+<!--                        <p th:text="${movie.overview}">Movie Overview</p>-->
+<!--                        <span th:text="${movie.poster_path}"></span>-->
+                    <img th:src="${movie.getSmallPoster()}" width="150" height="225" />
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-8">
+
+                <h2 class="section-heading">Popular on Letterboxd</h2>
+                <div th:each="movie : ${popularMovies}" style="float: left">
+                    <img th:src="${movie.getSmallPoster()}" width="150" height="225" />
+                </div>
+
+            </div>
+            <div class="col"></div>
+        </div>
+
+        <div class="row">
+
+        </div>
+
     </div>
 
-<!--    <h1>Welcome to Thymeleaf!</h1>-->
-<!--    <p th:text="'Hello, ' + ${name} + '!'"></p>-->
-<!--    <ul>-->
-<!--        <li th:each="movie : ${movies}">-->
-<!--            <h2 th:text="${movie.title}">Movie Title</h2>-->
-<!--            <p th:text="${movie.overview}">Movie Overview</p>-->
-<!--        </li>-->
-<!--    </ul>-->
 
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -1,5 +1,6 @@
 package com.project.tmdbapp.model;
 
+import com.project.tmdbapp.enums.MovieEnums;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +13,8 @@ import java.util.UUID;
 //@Entity
 //@Table(name = "movie")
 public class Movie {
+
+    public static final String BASE_URL = "https://api.themoviedb.org/3/movie/";
 
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,11 +38,16 @@ public class Movie {
         this.overview = overview;
     }
 
+    public String getSmallPoster() {
+        return MovieEnums.ImageSize.SMALL.getUrl() +  poster_path;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
                 "title='" + title + '\'' +
                 ", overview='" + overview + '\'' +
+                ", poster_path='" + getSmallPoster() + '\'' +
                 '}';
     }
 

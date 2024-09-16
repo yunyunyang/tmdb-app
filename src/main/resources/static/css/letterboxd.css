@@ -65,3 +65,29 @@ a.nav-link {
     height: 72px;
     /*color: #9ab;*/
 }
+
+.title-hero {
+    color: #abc;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.23076923;
+    overflow-wrap: break-word;
+    font-family: Graphik-Light-Web,sans-serif;
+}
+.sub-heading {
+    color: #9ab;
+    text-align: center;
+    font-size: 14px;
+}
+
+.section-heading {
+    color: #9ab;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: .075em;
+    border-bottom: 1px solid #456;
+}
+
+ul {
+    list-style-type: none;
+}
